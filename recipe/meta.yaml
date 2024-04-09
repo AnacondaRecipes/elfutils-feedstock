@@ -44,6 +44,10 @@ about:
   summary: a set of utilities and libraries for handling ELF (Executable and Linkable Format) files.
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/47182
+    reason: Client request
   recipe-maintainers:
+    - ianaobi
     - edisongustavo
     - xhochy
