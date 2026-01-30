@@ -1,13 +1,13 @@
-{% set version = "0.191" %}
+{% set name = "elfutils" %}
+{% set version = "0.194" %}
 
 package:
-  name: elfutils
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: elfutils-{{ version }}.tar.bz2
-  url: https://fedorahosted.org/releases/e/l/elfutils/{{ version }}/elfutils-{{ version }}.tar.bz2
-  sha256: df76db71366d1d708365fc7a6c60ca48398f14367eb2b8954efc8897147ad871
+  url: https://fedorahosted.org/releases/e/l/{{ name }}/{{ version }}/{{ name }}-{{ version }}.tar.bz2
+  sha256: 09e2ff033d39baa8b388a2d7fbc5390bfde99ae3b7c67c7daaf7433fbcf0f01e
 
 build:
   number: 0
@@ -17,20 +17,21 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - pkg-config
     - make
   host:
-    - bzip2
-    - libarchive
-    - libcurl
-    - libmicrohttpd
     - m4
-    - sqlite
-    - xz
-    - zlib
-    - zstd
+    - libmicrohttpd
+    - bzip2 {{ bzip2 }}
+    - libarchive {{ libarchive }}
+    - libcurl {{ libcurl }}
+    - sqlite {{ sqlite }}
+    - xz {{ xz }}
+    - zlib {{ zlib }}
+    - zstd {{ zstd }}
 
 test:
   requires:
@@ -38,10 +39,14 @@ test:
     - pkg-config
 
 about:
-  home: https://fedorahosted.org/elfutils/
+  home: https://fedorahosted.org/elfutils
   license: LGPL-3.0-only
+  license_family: LGPL
   license_file: COPYING-LGPLV3
   summary: a set of utilities and libraries for handling ELF (Executable and Linkable Format) files.
+  description: a set of utilities and libraries for handling ELF (Executable and Linkable Format) files.
+  home: https://sourceware.org/git/?p=elfutils.git;a=summary
+  home: https://fedorahosted.org/elfutils
 
 extra:
   recipe-maintainers:
