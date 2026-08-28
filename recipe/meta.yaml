@@ -49,6 +49,10 @@ about:
   home: https://fedorahosted.org/elfutils
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/47182
+    reason: Client request
   recipe-maintainers:
+    - ianaobi
     - edisongustavo
     - xhochy
