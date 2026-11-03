@@ -1,5 +1,5 @@
 {% set name = "elfutils" %}
-{% set version = "0.194" %}
+{% set version = "0.197" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://fedorahosted.org/releases/e/l/{{ name }}/{{ version }}/{{ name }}-{{ version }}.tar.bz2
-  sha256: 09e2ff033d39baa8b388a2d7fbc5390bfde99ae3b7c67c7daaf7433fbcf0f01e
+  sha256: 1fdf525f22dcf796d99a99ba3ea00a1f7b1ae5421bc62e8443a708920b99b904
 
 build:
   number: 0
