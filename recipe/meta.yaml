@@ -1,13 +1,13 @@
 {% set name = "elfutils" %}
-{% set version = "0.194" %}
+{% set version = "0.197" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://fedorahosted.org/releases/e/l/{{ name }}/{{ version }}/{{ name }}-{{ version }}.tar.bz2
-  sha256: 09e2ff033d39baa8b388a2d7fbc5390bfde99ae3b7c67c7daaf7433fbcf0f01e
+  url: https://sourceware.org/ftp/elfutils/{{ version }}/{{ name }}-{{ version }}.tar.bz2
+  sha256: 1fdf525f22dcf796d99a99ba3ea00a1f7b1ae5421bc62e8443a708920b99b904
 
 build:
   number: 0
@@ -22,8 +22,8 @@ requirements:
     - {{ compiler('cxx') }}
     - pkg-config
     - make
-  host:
     - m4
+  host:
     - libmicrohttpd
     - bzip2 {{ bzip2 }}
     - libarchive {{ libarchive }}
@@ -39,14 +39,17 @@ test:
     - pkg-config
 
 about:
-  home: https://fedorahosted.org/elfutils
+  home: https://sourceware.org/elfutils/
+  dev_url: https://sourceware.org/git/?p=elfutils.git;a=tree;h=refs/tags/elfutils-{{ version }};hb=refs/tags/elfutils-{{ version }}
+  doc_url: https://sourceware.org/git/?p=elfutils.git;a=tree;f=doc;hb=refs/tags/elfutils-{{ version }}
   license: LGPL-3.0-only
   license_family: LGPL
   license_file: COPYING-LGPLV3
-  summary: a set of utilities and libraries for handling ELF (Executable and Linkable Format) files.
-  description: a set of utilities and libraries for handling ELF (Executable and Linkable Format) files.
-  home: https://sourceware.org/git/?p=elfutils.git;a=summary
-  home: https://fedorahosted.org/elfutils
+  summary: A set of utilities and libraries for handling ELF (Executable and Linkable Format) files.
+  description: |
+    A set of utilities and libraries for handling ELF (Executable and Linkable
+    Format) files.  This includes libelf, libdw, libasm, libdwelf, libdwfl and
+    libebl together with the eu-* command line tools.
 
 extra:
   recipe-maintainers:
