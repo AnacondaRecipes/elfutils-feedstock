@@ -24,11 +24,8 @@ requirements:
     - make
     - m4
   host:
-    - libmicrohttpd
     - bzip2 {{ bzip2 }}
     - libarchive {{ libarchive }}
-    - libcurl {{ libcurl }}
-    - sqlite {{ sqlite }}
     - xz {{ xz }}
     - zlib {{ zlib }}
     - zstd {{ zstd }}
@@ -41,6 +38,7 @@ test:
 about:
   home: https://sourceware.org/elfutils/
   dev_url: https://sourceware.org/git/?p=elfutils.git;a=tree;h=refs/tags/elfutils-{{ version }};hb=refs/tags/elfutils-{{ version }}
+  doc_url: https://sourceware.org/git/?p=elfutils.git;a=tree;f=doc;hb=refs/tags/elfutils-{{ version }}
   license: LGPL-3.0-only
   license_family: LGPL
   license_file: COPYING-LGPLV3
