@@ -24,8 +24,11 @@ requirements:
     - make
     - m4
   host:
+    - libmicrohttpd
     - bzip2 {{ bzip2 }}
     - libarchive {{ libarchive }}
+    - libcurl {{ libcurl }}
+    - sqlite {{ sqlite }}
     - xz {{ xz }}
     - zlib {{ zlib }}
     - zstd {{ zstd }}
